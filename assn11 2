@@ -1,0 +1,98 @@
+Q1, Create a vehicle class with an init method having instance variables as name_of_vehicle, max_speed
+and average_of_vehicle.
+Here's a Python class Vehicle with an __init__() method defining instance variables name_of_vehicle, max_speed, and average_of_vehicle:
+python
+Copy code
+class Vehicle:
+    def __init__(self, name_of_vehicle, max_speed, average_of_vehicle):
+        self.name_of_vehicle = name_of_vehicle
+        self.max_speed = max_speed
+        self.average_of_vehicle = average_of_vehicle
+In this example:
+•	name_of_vehicle, max_speed, and average_of_vehicle are instance variables initialized when an object of Vehicle class is created.
+
+Q2. Create a child class car from the vehicle class created in Que 1, which will inherit the vehicle class.
+Create a method named seating_capacity which takes capacity as an argument and returns the name of
+the vehicle and its seating capacity.
+
+Here's a Python example demonstrating inheritance where Car is a child class inheriting from the Vehicle class:
+python
+Copy code
+class Vehicle:
+    def __init__(self, name_of_vehicle, max_speed, average_of_vehicle):
+        self.name_of_vehicle = name_of_vehicle
+        self.max_speed = max_speed
+        self.average_of_vehicle = average_of_vehicle
+
+class Car(Vehicle):
+    def seating_capacity(self, capacity):
+        return f"{self.name_of_vehicle} has a seating capacity of {capacity}."
+
+# Example usage:
+car = Car("Toyota Camry", 180, 12)
+print(car.seating_capacity(5))  # Output: Toyota Camry has a seating capacity of 5.
+In this example:
+•	Car inherits from Vehicle, so it automatically inherits the __init__() method and instance variables (name_of_vehicle, max_speed, average_of_vehicle).
+•	seating_capacity() method in Car class takes a capacity argument and returns a string stating the vehicle's name and its seating capacity.
+Q3. What is multiple inheritance? Write a python code to demonstrate multiple inheritance.
+Multiple inheritance in Python occurs when a class inherits from more than one parent class. It allows the child class to inherit attributes and methods from all parent classes.
+Example:
+python
+Copy code
+class A:
+    def methodA(self):
+        print("Method A")
+
+class B:
+    def methodB(self):
+        print("Method B")
+
+class C(A, B):
+    def methodC(self):
+        print("Method C")
+
+obj = C()
+obj.methodA()  # Output: Method A
+obj.methodB()  # Output: Method B
+obj.methodC()  # Output: Method C
+In this example, class C inherits from both classes A and B, enabling it to access methods from both parent classes.
+Q4. What are getter and setter in python? Create a class and create a getter and a setter method in this
+class.
+In Python, getters and setters are methods used to access (get) and modify (set) the values of private attributes of a class, ensuring controlled access and encapsulation.
+Example:
+python
+Copy code
+class Student:
+    def __init__(self, name):
+        self.__name = name
+
+    def get_name(self):
+        return self.__name
+
+    def set_name(self, name):
+        self.__name = name
+
+# Usage:
+student = Student("Alice")
+print(student.get_name())  # Output: Alice
+student.set_name("Bob")
+print(student.get_name())  # Output: Bob
+In this example, get_name() is a getter method that returns the value of private attribute __name, while set_name() is a setter method that sets a new value to __name.
+Q5.What is method overriding in python? Write a python code to demonstrate method overriding.
+Method overriding in Python occurs when a subclass provides a specific implementation of a method that is already defined in its superclass. It allows a subclass to modify or extend the behavior of a method from its superclass.
+Example:
+python
+Copy code
+class Animal:
+    def sound(self):
+        print("Animal makes a sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")
+
+# Usage:
+dog = Dog()
+dog.sound()  # Output: Dog barks
+In this example, Dog overrides the sound() method defined in Animal with its own implementation.
+
